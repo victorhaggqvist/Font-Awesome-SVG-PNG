@@ -8,11 +8,13 @@ var svgo = new SVGO({
 });
 
 var template =
-'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">' +
-'<g transform="translate({shiftX} {shiftY})">' +
-'<g transform="scale(1 -1) translate(0 -1280)">' +
-'<path d="{path}" fill="{color}" />' +
-'</g></g>' +
+'<?xml version="1.0" encoding="utf-8"?>\n' +
+'<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n' +
+'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">\n' +
+'<g transform="translate({shiftX} {shiftY})">\n' +
+'<g transform="scale(1 -1) translate(0 -1280)">\n' +
+'<path d="{path}" fill="{color}"></path>\n' +
+'</g></g>\n' +
 '</svg>';
 
 var spawn = require('child_process').spawn;
