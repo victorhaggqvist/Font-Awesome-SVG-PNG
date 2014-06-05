@@ -26,7 +26,11 @@ var async = require('async');
 
 var code2name = {};
 
-var argv = require('optimist').usage("Usage: $0 -color white --sprites").describe('sizes', "Provide comma separated sizes to generate").describe('sprites', 'Generate sprites.svg to use SVG as icons (http://tympanus.net/codrops/2013/11/27/svg-icons-ftw/)').default({sizes: "16,22,24,32,48,64,128,256"}).argv;
+var argv = require('optimist')
+              .usage("Usage: $0 -color white --sprites")
+              .describe('sizes', "Provide comma separated sizes to generate")
+              .describe('sprites', 'Generate sprites.svg to use SVG as icons (http://tympanus.net/codrops/2013/11/27/svg-icons-ftw/)')
+              .default({sizes: "16,22,24,32,48,64,128,256"}).argv;
 
 if(argv.help || (!argv.color && !argv.sprites)) {
   return console.log(require('optimist').help());
